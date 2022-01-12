@@ -259,6 +259,24 @@ int main(int argc, char const *argv[]) {
                             break;
                         }
                         case 3:  {// Eliminar artistas
+
+                            list<Artista> auxArtistas;
+
+                            cin.ignore();
+                            string nombre;
+                            cout << "Indique el nombre del artista: " << endl;
+                            getline(cin, nombre);
+
+                            for (Artista a : listadoArtistas) {
+                                if (a.getNombre().compare(nombre) != 0) {
+                                    auxArtistas.push_back(a);
+                                }
+                            }
+
+                            listadoArtistas = auxArtistas;
+                            
+                            auxArtistas.clear();
+
                             break;
                         }
                         case 4: {
